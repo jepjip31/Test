@@ -1,0 +1,23 @@
+FROM ubuntu:22.04
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime \
+ && apt-get update \
+ && apt-get install -y --no-install-recommends \
+      tzdata \
+      curl \
+      ca-certificates \
+      gnupg \
+      lsb-release \
+      openjdk-21-jdk-headless \
+      git \
+      nano \
+      netcat \
+      tmux \
+      openssh-client \
+      nodejs \
+      npm \
+ && rm -rf /var/lib/apt/lists/*
+
+ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+ENV PATH="$JAVA_HOME/bin:${PATH}"
