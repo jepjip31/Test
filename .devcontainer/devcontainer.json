@@ -1,7 +1,7 @@
 {
   "name": "Forge Server",
   "build": {
-    "dockerfile": "Dockerfile",
+    "dockerfile": "Refile",
     "context": "."
   },
   "forwardPorts": [25565],
