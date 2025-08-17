@@ -1,0 +1,17 @@
+{
+  "name": "Forge Server",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "forwardPorts": [25565],
+  "postCreateCommand": "mkdir -p /workspaces/${localWorkspaceFolderBasename}/forgemc && echo 'Drop paper.jar into ./forgemc and run: java -jar paper.jar nogui'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.java",
+        "vscjava.vscode-java-debug"
+      ]
+    }
+  }
+}
